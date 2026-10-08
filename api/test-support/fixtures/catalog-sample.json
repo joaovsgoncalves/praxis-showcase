@@ -1,0 +1,95 @@
+[
+  {
+    "id": "0001",
+    "name": "3/4 sit-up",
+    "category": "waist",
+    "body_part": "waist",
+    "equipment": "body weight",
+    "instructions": {
+      "en": "Lie flat on your back with your knees bent and feet flat on the ground. Place your hands behind your head with your elbows pointing outwards. Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle. Pause for a moment at the top, then slowly lower your upper body back down to the starting position. Repeat for the desired number of repetitions."
+    },
+    "instruction_steps": {
+      "en": [
+        "Lie flat on your back with your knees bent and feet flat on the ground.",
+        "Place your hands behind your head with your elbows pointing outwards.",
+        "Engaging your abs, slowly lift your upper body off the ground, curling forward until your torso is at a 45-degree angle.",
+        "Pause for a moment at the top, then slowly lower your upper body back down to the starting position.",
+        "Repeat for the desired number of repetitions."
+      ]
+    },
+    "muscle_group": "hip flexors",
+    "secondary_muscles": [
+      "hip flexors",
+      "lower back"
+    ],
+    "target": "abs",
+    "image": "images/0001-2gPfomN.jpg",
+    "gif_url": "videos/0001-2gPfomN.gif",
+    "media_id": "2gPfomN",
+    "created_at": "2026-03-18T12:31:32.854798+00:00",
+    "attribution": "© Gym visual — https://gymvisual.com/"
+  },
+  {
+    "id": "1316",
+    "name": "barbell bent arm pullover",
+    "category": "back",
+    "body_part": "back",
+    "equipment": "barbell",
+    "instructions": {
+      "en": "Lie flat on a bench with your head at one end and your feet on the floor. Hold a barbell with a shoulder-width grip and extend your arms straight above your chest. Lower the barbell behind your head while keeping your arms slightly bent. Pause for a moment, then pull the barbell back up to the starting position. Repeat for the desired number of repetitions."
+    },
+    "instruction_steps": {
+      "en": [
+        "Lie flat on a bench with your head at one end and your feet on the floor.",
+        "Hold a barbell with a shoulder-width grip and extend your arms straight above your chest.",
+        "Lower the barbell behind your head while keeping your arms slightly bent.",
+        "Pause for a moment, then pull the barbell back up to the starting position.",
+        "Repeat for the desired number of repetitions."
+      ]
+    },
+    "muscle_group": "lats",
+    "secondary_muscles": [
+      "chest",
+      "triceps",
+      "shoulders"
+    ],
+    "target": "lats",
+    "image": "images/1316-j599l3T.jpg",
+    "gif_url": "videos/1316-j599l3T.gif",
+    "media_id": "j599l3T",
+    "created_at": "2026-03-18T12:31:32.855012+00:00",
+    "attribution": "© Gym visual — https://gymvisual.com/"
+  },
+  {
+    "id": "3220",
+    "name": "star jump (male)",
+    "category": "cardio",
+    "body_part": "cardio",
+    "equipment": "body weight",
+    "instructions": {
+      "en": "Stand with your feet shoulder-width apart. Bend your knees and lower your body into a squat position. Jump explosively upwards, extending your legs and arms. While in the air, spread your legs apart and bring your arms out to the sides. Land softly with your feet shoulder-width apart, bending your knees to absorb the impact. Repeat for the desired number of repetitions."
+    },
+    "instruction_steps": {
+      "en": [
+        "Stand with your feet shoulder-width apart.",
+        "Bend your knees and lower your body into a squat position.",
+        "Jump explosively upwards, extending your legs and arms.",
+        "While in the air, spread your legs apart and bring your arms out to the sides.",
+        "Land softly with your feet shoulder-width apart, bending your knees to absorb the impact.",
+        "Repeat for the desired number of repetitions."
+      ]
+    },
+    "muscle_group": "quadriceps",
+    "secondary_muscles": [
+      "quadriceps",
+      "hamstrings",
+      "calves"
+    ],
+    "target": "cardiovascular system",
+    "image": "images/3220-f9lVSSI.jpg",
+    "gif_url": "videos/3220-f9lVSSI.gif",
+    "media_id": "f9lVSSI",
+    "created_at": "2026-03-18T12:31:32.855601+00:00",
+    "attribution": "© Gym visual — https://gymvisual.com/"
+  }
+]

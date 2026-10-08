@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Praxis">
+  <rect width="32" height="32" rx="7" fill="#0c0c10"/>
+  <defs>
+    <linearGradient id="g" x1="8" y1="6" x2="24" y2="26" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffd278"/><stop offset=".55" stop-color="#f5a820"/><stop offset="1" stop-color="#c87808"/>
+    </linearGradient>
+  </defs>
+  <!-- stylized P/D with upward arrow (matches praxis-logo) -->
+  <path fill="url(#g)" d="M8.2 8.2 L18.6 8.2 Q24.8 8.2 24.8 14.2 Q24.8 19.4 19.4 20.2 L14.2 20.2 L14.2 24.2 L11 24.2 L11 8.2 Z M14.2 11 L14.2 17.4 L18.4 17.4 Q21.4 17.4 21.4 14.2 Q21.4 11 18.4 11 Z"/>
+  <path fill="url(#g)" d="M16.2 15.2 L21.6 9.6 L23.2 11.2 L20.4 14 L24.2 14 L24.2 16.4 L16.2 16.4 Z"/>
+</svg>

@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --background: 240 6% 7%;
+    --foreground: 0 0% 95%;
+    --card: 240 5% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 5% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 38 85% 52%;
+    --primary-foreground: 240 6% 6%;
+    --secondary: 240 5% 14%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 160 45% 42%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 38 85% 52%;
+    --chart-1: 38 85% 52%;
+    --chart-2: 160 80% 50%;
+    --chart-3: 200 80% 60%;
+    --chart-4: 40 90% 60%;
+    --chart-5: 330 80% 60%;
+    --gold: 38 85% 52%;
+    --radius: 0.75rem;
+    --sidebar-background: 240 7% 8%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 38 85% 52%;
+    --sidebar-primary-foreground: 20 10% 8%;
+    --sidebar-accent: 240 5% 13%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 4% 14%;
+    --sidebar-ring: 38 85% 52%;
+
+    /* Domain palette — semantic colors per area of the app */
+    --domain-ember: 38 85% 52%;
+    --domain-gold: 40 70% 50%;
+    --domain-focus: 38 85% 52%;
+    --domain-wellness: 160 45% 42%;
+    --domain-sky: 200 50% 48%;
+    --domain-pink: 330 45% 52%;
+  }
+
+  .dark {
+    --background: 240 6% 6%;
+    --foreground: 0 0% 95%;
+    --card: 240 5% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 5% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 38 85% 52%;
+    --primary-foreground: 240 6% 6%;
+    --secondary: 240 5% 14%;
+    --secondary-foreground: 0 0% 85%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 160 45% 42%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 18%;
+    --input: 240 4% 18%;
+    --ring: 38 85% 52%;
+    --chart-1: 38 85% 52%;
+    --chart-2: 160 80% 50%;
+    --chart-3: 200 80% 60%;
+    --chart-4: 40 90% 60%;
+    --chart-5: 330 80% 60%;
+    --gold: 38 85% 52%;
+    --sidebar-background: 240 7% 8%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 38 85% 52%;
+    --sidebar-primary-foreground: 20 10% 8%;
+    --sidebar-accent: 240 5% 13%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 4% 14%;
+    --sidebar-ring: 38 85% 52%;
+
+    --domain-ember: 38 85% 52%;
+    --domain-gold: 40 70% 50%;
+    --domain-focus: 38 85% 52%;
+    --domain-wellness: 160 45% 42%;
+    --domain-sky: 200 50% 48%;
+    --domain-pink: 330 45% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+      @apply text-foreground font-sans;
+      font-size: 16px;
+      text-rendering: geometricPrecision;
+      background-color: hsl(var(--background));
+      /* One soft top wash — particles own the atmosphere; avoid competing orbs */
+      background-image:
+        radial-gradient(ellipse 90% 55% at 50% -18%, hsl(38 70% 16% / 0.18), transparent 58%);
+      background-attachment: fixed;
+    }
+}
+
+@layer components {
+  /* Glass surface for hero and key elevated cards */
+  .glass-surface {
+    background: hsl(var(--card) / 0.92);
+    border: 1px solid hsl(0 0% 100% / 0.05);
+    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.03);
+  }
+
+  .praxis-panel {
+    background: hsl(var(--card) / 0.94);
+    border: 1px solid hsl(0 0% 100% / 0.06);
+    box-shadow: none;
+  }
+
+  .praxis-kicker {
+    @apply font-sans text-xs font-medium tracking-wide text-muted-foreground normal-case;
+  }
+
+  /* Kicker com ícone — baseline alinhada ao bloco */
+  .praxis-kicker-row {
+    @apply flex items-center gap-2 font-sans text-xs font-medium tracking-wide text-muted-foreground normal-case;
+  }
+
+  .praxis-page {
+    @apply mx-auto max-w-6xl space-y-6;
+  }
+
+  .praxis-page--tight {
+    @apply space-y-3 sm:space-y-4;
+  }
+
+  .praxis-page-hero {
+    @apply rounded-2xl border border-border/80 bg-card/40 p-5 sm:p-6;
+  }
+
+  .praxis-stat-label {
+    @apply text-xs font-medium text-muted-foreground leading-tight normal-case tracking-normal;
+  }
+
+  .praxis-stat-tile {
+    @apply rounded-xl border border-border/60 bg-card/30 px-4 py-3 text-left;
+  }
+
+  .praxis-stat-value {
+    @apply mt-1.5 text-xl font-semibold tabular-nums leading-none tracking-tight sm:text-2xl;
+  }
+
+  .praxis-title {
+    @apply font-display tracking-[-0.045em];
+  }
+
+  /* Domain card — borda sutil (Lote 7 quiet) */
+  .card-domain {
+    --domain: var(--domain-focus);
+    position: relative;
+  }
+  .card-domain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px hsl(var(--domain) / 0.08);
+  }
+
+  /* Inset shadow for progress fill rails */
+  .rail-inset {
+    box-shadow: inset 0 1px 2px hsl(0 0% 0% / 0.4);
+  }
+
+  /* Superpowers UI — Hardware Relevo & Glow */
+    .praxis-tactile-card {
+      background: hsl(var(--card) / 0.78);
+      border: 1px solid hsl(var(--border) / 0.9);
+      box-shadow:
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.09),
+        0 8px 28px -8px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(245, 158, 11, 0.04);
+      backdrop-filter: blur(14px);
+      transition:
+        border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .praxis-tactile-card:hover {
+      border-color: hsl(var(--primary) / 0.45);
+      box-shadow:
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+        0 10px 32px -8px rgba(0, 0, 0, 0.58),
+        0 0 24px -8px rgba(245, 158, 11, 0.18);
+    }
+
+  .praxis-glow-ember {
+    box-shadow: 0 0 20px -3px rgba(245, 158, 11, 0.35);
+  }
+
+  .praxis-strike-anim {
+    position: relative;
+  }
+
+  .praxis-strike-anim::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: hsl(var(--muted-foreground) / 0.6);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .praxis-strike-anim.is-done::after {
+    transform: scaleX(1);
+  }
+}
+
+@layer utilities {
+  .domain-ember    { --domain: var(--domain-ember); }
+  .domain-gold     { --domain: var(--domain-gold); }
+  .domain-focus    { --domain: var(--domain-focus); }
+  .domain-wellness { --domain: var(--domain-wellness); }
+  .domain-sky      { --domain: var(--domain-sky); }
+  .domain-pink     { --domain: var(--domain-pink); }
+
+  .text-domain { color: hsl(var(--domain)); }
+  .bg-domain   { background-color: hsl(var(--domain)); }
+
+  /* Sparkle keyframe used by habit complete micro-animation */
+  @keyframes spark-burst {
+    0%   { transform: scale(0.95) translate(0, 0); opacity: 1; }
+    60%  { opacity: 1; }
+    100% { transform: scale(1) translate(var(--sx, 0), var(--sy, 0)); opacity: 0; }
+  }
+  .spark { animation: spark-burst 400ms ease-out forwards; }
+
+  @keyframes ring-pulse {
+    0%, 100% { opacity: 0.6; }
+    50%      { opacity: 1; }
+  }
+  .ring-pulse { animation: ring-pulse 2.5s ease-in-out infinite; }
+
+  /* Recording / ambient pulse — opacity only (GPU-friendly, no scale thrash) */
+  @keyframes praxis-opacity-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+  }
+  .praxis-opacity-pulse {
+    animation: praxis-opacity-pulse 1.4s ease-in-out infinite;
+  }
+
+  /* Emil motion P0 — honor reduced motion (keep color/opacity; kill loops & big moves) */
+  @media (prefers-reduced-motion: reduce) {
+    .spark {
+      animation: none;
+      opacity: 0;
+    }
+    .ring-pulse,
+    .praxis-opacity-pulse {
+      animation: none !important;
+      opacity: 1;
+    }
+    .animate-ping {
+      animation: none !important;
+    }
+    .animate-pulse {
+      animation: none !important;
+    }
+    .animate-spin {
+      animation-duration: 1.5s;
+    }
+  }
+
+  /* Onda 12 — viewport estreito (~390px): CTAs e listas sem overflow horizontal */
+  .praxis-scroll-x {
+    @apply overflow-x-auto max-w-full overscroll-x-contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  .praxis-touch-target {
+    @apply min-h-11 min-w-11 touch-manipulation;
+  }
+
+  /* Onda 17 — safe areas (notch / home indicator) */
+  .praxis-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+/* Praxis premium pass — interior do produto alinhado à landing. */
+.praxis-sidebar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.praxis-sidebar-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* Hide native OS scrollbars on chip rows / horizontal rails (João 2026-07-24) */
+.praxis-hide-scrollbar,
+.praxis-scroll-x {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.praxis-hide-scrollbar::-webkit-scrollbar,
+.praxis-scroll-x::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/*
+ * Dark app: thin muted scrollbars instead of Windows light chrome.
+ * Dialogs / long lists keep scroll, without white trough + arrows.
+ */
+.praxis-app,
+.praxis-app * {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+.praxis-app *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.praxis-app *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.praxis-app *::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--border));
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.praxis-app *::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.45);
+}
+
+.praxis-app *::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Prefer hide on intentional chip/rail scrollers even inside .praxis-app */
+.praxis-app .praxis-hide-scrollbar,
+.praxis-app .praxis-scroll-x {
+  scrollbar-width: none;
+}
+
+.praxis-app .praxis-hide-scrollbar::-webkit-scrollbar,
+.praxis-app .praxis-scroll-x::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.praxis-brand-mark {
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+a:hover .praxis-brand-mark,
+a:focus-visible .praxis-brand-mark {
+  border-color: hsl(var(--domain-gold) / 0.22);
+  background-color: hsl(var(--domain-gold) / 0.055);
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.06),
+    0 0 30px hsl(var(--domain-gold) / 0.08);
+  transform: translateY(-1px);
+}
+
+.praxis-dashboard {
+  width: 100%;
+  max-width: 80rem;
+}
+
+.praxis-dashboard .praxis-panel {
+  background:
+    linear-gradient(180deg, hsl(var(--card) / 0.82), hsl(var(--card) / 0.68));
+  border-color: hsl(0 0% 100% / 0.06);
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.025),
+    0 14px 45px hsl(0 0% 0% / 0.10);
+}
+
+.praxis-dashboard .praxis-dashboard-card {
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.praxis-dashboard .praxis-dashboard-card:hover {
+  border-color: hsl(0 0% 100% / 0.085);
+}
+
+.praxis-dashboard-context .praxis-context-card {
+  background:
+    linear-gradient(180deg, hsl(var(--card) / 0.76), hsl(var(--card) / 0.63));
+}
+
+.praxis-dashboard-summary,
+.praxis-now-card {
+  box-shadow:
+    inset 0 1px 0 hsl(0 0% 100% / 0.03),
+    0 18px 55px hsl(0 0% 0% / 0.13);
+}
+
+.praxis-progress-fill {
+  transition: width 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes praxis-dashboard-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.praxis-dashboard-reveal {
+  animation: praxis-dashboard-reveal 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--praxis-reveal-delay, 0ms);
+}
+
+@keyframes praxis-soft-ping {
+  0%, 100% {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(2.2);
+  }
+}
+
+.praxis-now-pulse > span:first-child {
+  animation: praxis-soft-ping 2.4s ease-in-out infinite;
+}
+
+@keyframes praxis-completion-glow {
+  0% {
+    opacity: 0;
+    box-shadow: inset 0 0 0 1px hsl(var(--domain-wellness) / 0);
+  }
+  35% {
+    opacity: 1;
+    box-shadow:
+      inset 0 0 0 1px hsl(var(--domain-wellness) / 0.35),
+      inset 0 0 34px hsl(var(--domain-wellness) / 0.10);
+  }
+  100% {
+    opacity: 0;
+    box-shadow: inset 0 0 0 1px hsl(var(--domain-wellness) / 0);
+  }
+}
+
+.praxis-completion-glow {
+  animation: praxis-completion-glow 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .praxis-dashboard-reveal {
+    animation: none !important;
+  }
+
+  .praxis-progress-fill {
+    transition: none !important;
+  }
+
+  .praxis-now-pulse > span:first-child,
+  .praxis-completion-glow {
+    animation: none !important;
+  }
+
+  .praxis-brand-mark {
+    transition: none !important;
+  }
+}
+
+/* Landing — public face of Praxis. Kept outside Tailwind layers for predictable visual effects. */
+.landing-page {
+  --landing-grid-line: hsl(0 0% 100% / 0.035);
+}
+
+.landing-grid {
+  background-image:
+    linear-gradient(to right, var(--landing-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--landing-grid-line) 1px, transparent 1px);
+  background-size: 54px 54px;
+  -webkit-mask-image: linear-gradient(to bottom, black 8%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 8%, transparent 92%);
+}
+
+.landing-app-frame {
+  transform: perspective(1400px) rotateY(-1.2deg) rotateX(0.8deg);
+  transform-origin: center center;
+}
+
+@keyframes landing-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -7px, 0); }
+}
+
+@keyframes landing-orbit {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.55; }
+  50% { transform: rotate(180deg) scale(1.035); opacity: 1; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.55; }
+}
+
+@keyframes landing-wave {
+  0%, 100% { height: 5px; opacity: 0.45; }
+  50% { height: var(--bar-height); opacity: 1; }
+}
+
+.landing-float-card {
+  animation: landing-float 5.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.landing-float-card--delay {
+  animation-delay: -2.2s;
+}
+
+.landing-orbit {
+  animation: landing-orbit 18s linear infinite;
+}
+
+.landing-orbit--reverse {
+  animation-direction: reverse;
+  animation-duration: 14s;
+}
+
+.landing-wave-bar {
+  height: 5px;
+  animation: landing-wave 1.15s ease-in-out infinite;
+  animation-delay: var(--bar-delay);
+}
+
+@media (max-width: 1023px) {
+  .landing-app-frame {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-float-card,
+  .landing-orbit,
+  .landing-wave-bar {
+    animation: none !important;
+  }
+
+  .landing-wave-bar {
+    height: var(--bar-height);
+  }
+}
